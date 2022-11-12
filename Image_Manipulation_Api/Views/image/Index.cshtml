@@ -1,0 +1,97 @@
+﻿@model Image_Manipulation_Api.Models.image
+@{
+}
+@{
+}
+<form id="form1" method="post" action="~/Controllers/">
+    <div>
+        <div>
+            <FileUpload id="fileupload1"></FileUpload>
+
+            <button id="button1" onclick="UploadFile(fileupload1)">Browse</button>
+
+            <Image id="image1"></Image>
+
+            @using (Html.BeginForm("imgResize", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.imglength)
+                @Html.TextBoxFor(model => model.imgwidth)
+                <button type="submit">Crop</button>
+            }
+            @using (Html.BeginForm("imgBlur", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.blurpixalcount)
+                <button type="submit">Blur</button>
+            }
+            @using (Html.BeginForm("imgGrayscale", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.graypixalcount)
+                <button type="submit">GrayScale</button>
+            }
+
+        </div>
+
+        <button type="submit" class="btn btn-firstimg" onclick="EditImg()">Apply</button>
+    </div>
+
+    <div>
+        <div>
+            <FileUpload id="fileupload2"></FileUpload>
+
+            <button id="button2" onclick="UploadFile(fileupload2)">Browse</button>
+
+            <Image id="image2"></Image>
+
+            @using (Html.BeginForm("imgResize", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.imglength)
+                @Html.TextBoxFor(model => model.imgwidth)
+                <button type="submit">Crop</button>
+            }
+            @using (Html.BeginForm("imgBlur", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.blurpixalcount)
+                <button type="submit">Blur</button>
+            }
+            @using (Html.BeginForm("imgGrayscale", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.graypixalcount)
+                <button type="submit">GrayScale</button>
+            }
+
+        </div>
+
+        <button type="submit" class="btn btn-secondimg" onclick="EditImg()">Apply</button>
+    </div>
+
+    <div>
+        <div>
+            <FileUpload id="fileupload3"></FileUpload>
+
+            <button id="button3" onclick="UploadFile(fileupload3)">Browse</button>
+
+            <Image id="image3"></Image>
+
+            @using (Html.BeginForm("imgResize", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.imglength)
+                @Html.TextBoxFor(model => model.imgwidth)
+                <button type="submit">Crop</button>
+            }
+            @using (Html.BeginForm("imgBlur", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.blurpixalcount)
+                <button type="submit">Blur</button>
+            }
+            @using (Html.BeginForm("imgGrayscale", "image", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.graypixalcount)
+                <button type="submit">GrayScale</button>
+            }
+
+        </div>
+
+        <button type="submit" class="btn btn-thirdimg" onclick="EditImg()">Apply</button>
+    </div>
+    <button type="submit" class="btn btn-save">Save</button>
+</form>
